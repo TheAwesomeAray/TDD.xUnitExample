@@ -2,10 +2,6 @@ from was_run import *
 
 
 class TestCaseTest(TestCase):
-    def __init__(self, name):
-        self.test = None
-        TestCase.__init__(self, name)
-
     def set_up(self):
         self.test = WasRun("test_method")
 
@@ -15,4 +11,10 @@ class TestCaseTest(TestCase):
 
     def test_set_up(self):
         self.test.run()
-        assert self.test.wasSetUp
+        assert "set_up test_method " == self.test.log
+
+    def test_template_method(self):
+        test = WasRun("test_method")
+        test.run()
+        assert("setUp test_method tear_down" == self.test.log)
+
