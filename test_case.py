@@ -7,12 +7,12 @@ class TestCase:
         self.wasRun = None
         self.test = None
         self.log = None
+        self.result = TestResult()
 
     def set_up(self):
         self.wasRun = None
 
-    def run(self):
-        result = TestResult()
+    def run(self, result):
         result.testStarted()
         try:
             self.set_up()
