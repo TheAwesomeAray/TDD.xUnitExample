@@ -1,4 +1,5 @@
 from was_run import *
+from was_not_run import *
 
 
 class TestCaseTest(TestCase):
@@ -31,3 +32,13 @@ class TestCaseTest(TestCase):
         result = test.run()
         assert "1 run, 1 failed" == result.summary()
 
+    def test_failed_result_formatting(self):
+        result = TestResult()
+        result.testStarted()
+        result.testFailed()
+        assert "1 run, 1 failed" == result.summary()
+
+    def test_failed_set_up(self):
+        test = WasNotRun("test_method")
+        result = test.run()
+        assert "1 run, 1 failed" == result.summary()

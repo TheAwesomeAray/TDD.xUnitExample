@@ -6,5 +6,7 @@ test.test_set_up()
 test.run()
 test.test_template_method()
 test.test_result()
+test.test_failed_result_formatting()
 test.test_failed_result()
+test.test_failed_set_up()
 
