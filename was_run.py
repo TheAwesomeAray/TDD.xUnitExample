@@ -3,7 +3,6 @@ from test_case import *
 
 class WasRun(TestCase):
     def __init__(self, name):
-        self.wasRun = None
         TestCase.__init__(self, name)
 
     def test_method(self):
