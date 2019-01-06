@@ -10,5 +10,8 @@ class WasRun(TestCase):
         self.wasRun = 1
         self.log = self.log + "test_method "
 
+    def test_broken_method(self):
+        raise Exception
+
     def tear_down(self):
-        self.log = self.log + " tear_down"
+        self.log = self.log + "tear_down "
